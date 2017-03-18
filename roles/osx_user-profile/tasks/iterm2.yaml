@@ -1,0 +1,21 @@
+# iTerm2
+- name: "Run this task before homebrew_cask module, so that sudo cache gets refreshed."
+  command: "echo none"
+  become: yes
+  changed_when: false
+
+- name: "Ensure homebrew cask iTerm2 absent"
+  homebrew_cask: name=iterm2 state=absent
+  when: reinstall_brew_casks | default('no') | bool
+
+- name: "Ensure homebrew cask iTerm2 present"
+  homebrew_cask: name=iterm2 state=present
+
+- name: "Ensure ~/.iterm2/ directory present"
+  file: path=~/.iterm2 state=directory
+
+- name: "Ensure ~/.iterm2/com.googlecode.iterm2.plist latest"
+  template:
+    src: com.googlecode.iterm2.plist.j2
+    dest: ~/.iterm2/com.googlecode.iterm2.plist
+  register: refresh_iterm2

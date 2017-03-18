@@ -1,0 +1,5 @@
+- include: ansible.yaml
+- include: bash.yaml
+- include: git.yaml
+- include: ssh.yaml
+- include: utiliti-packages.yaml

@@ -1,0 +1,31 @@
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode7.3
+      language: generic
+      env:
+        - JOB_NAME: boostrap_user-profile
+        - JOB_OS: MacOS
+
+    - os: linux
+      dist: trusty
+      sudo: false
+      language: python
+      env:
+        - JOB_NAME: boostrap_user-profile
+        - JOB_OS: trusty
+
+    - os: linux
+      dist: precise
+      sudo: false
+      language: python
+      env:
+        - JOB_NAME: boostrap_user-profile
+        - JOB_OS: precise
+
+install:
+  - ./install.sh
+
+script:
+  - ansible-playbook bootstrap.yaml

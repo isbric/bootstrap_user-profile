@@ -1,0 +1,14 @@
+# bash
+- name: "Ensure latest bash-completion with apt"
+  apt: name=bash-completion state=latest
+
+- name: "Ensure ~/.profile latest"
+  template:
+    src: dot_profile.j2
+    dest: ~/.profile
+  register: refresh profile
+
+- name: "Ensure ~/.vimrc latest"
+  template:
+    src: dot_vimrc.j2
+    dest: ~/.vimrc

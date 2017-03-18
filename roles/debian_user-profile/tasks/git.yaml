@@ -1,0 +1,7 @@
+- name: "Ensure latest git with apt"
+  apt: name=git state=latest
+
+- name: "Ensure ~/.gitconfig latest"
+  template:
+    src: dot_gitconfig.j2
+    dest: ~/.gitconfig

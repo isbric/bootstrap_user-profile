@@ -1,0 +1,19 @@
+# powerline-status
+- name: "Ensure latest powerline-status with pip"
+  pip: name=powerline-status state=latest
+
+- name: "Ensure ~/.config/powerline/ directory present"
+  file: path=~/.config/powerline state=directory
+
+- name: "Ensure latest ~/.config/powerline/config.json"
+  template: src=dot_config_powerline_config.json.j2 dest=~/.config/powerline/config.json
+  register: powerline_config
+
+- name: "Ensure latest powerline-fonts with repo"
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: ~/repos/powerline-fonts.git
+  register: powerline_fonts_updated
+
+- name: "Ensure latest powerline-status Hack font in ~/Library/Fonts/"
+  copy: src=~/repos/powerline-fonts.git/Hack dest=~/Library/Fonts/Hack

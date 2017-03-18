@@ -1,0 +1,44 @@
+# Tasks to include
+#
+# sh -c "$(head -4 main.yaml | tail -1 | sed 's/^# //')"
+# head -5 main.yaml > new.main.yaml && for var in $(ls | grep -v "main.yaml" | sed 's/\.yaml$//' | sort); do printf "%s include: %s.yaml\n  tags: %s\n\n" "-" "${var}" "${var}";done >> new.main.yaml && mv new.main.yaml main.yaml
+#
+- include: ansible.yaml
+  tags: ansible
+
+- include: bash.yaml
+  tags: bash
+
+- include: git.yaml
+  tags: git
+
+- include: gitmultirepo.yaml
+  tags: gitmultirepo
+
+- include: homebrew.yaml
+  tags: homebrew
+
+- include: iterm2.yaml
+  tags: iterm2
+
+- include: karabiner-elements.yaml
+  tags: karabiner-elements
+
+- include: pip.yaml
+  tags: pip
+
+- include: powerline.yaml
+  tags: powerline
+
+- include: ssh.yaml
+  tags: ssh
+
+- include: tmux.yaml
+  tags: tmux
+
+- include: utiliti-packages.yaml
+  tags: utiliti-packages
+
+- include: vim.yaml
+  tags: vim
+

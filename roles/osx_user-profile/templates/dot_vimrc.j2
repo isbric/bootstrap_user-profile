@@ -1,0 +1,36 @@
+"--- Work in progress ----------"
+set encoding=utf-8
+set term=xterm-256color
+set termencoding=utf-8
+filetype plugin indent on
+set backspace=indent,eol,start
+syntax on
+set t_Co=256
+set ttimeoutlen=50
+
+"--- autocmd's -----------------"
+autocmd BufWritePre * %s/\s\+$//e
+
+
+"--- Search --------------------" 
+set hlsearch
+set incsearch
+
+"--- Wild modes/menu -----------" 
+set wildmenu
+set wildmode=longest:list,full
+
+"--- Visuals -------------------" 
+" Useful link -> http://bytefluent.com/vivify/
+colorscheme default
+
+set number
+set laststatus=2
+
+"--- Powerline -----------------" 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+"set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set fillchars+=stl:\ ,stlnc:\

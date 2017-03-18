@@ -1,0 +1,14 @@
+# Utilities
+- name: "Ensure latest utility packages with brew"
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - pv
+    - ent
+    - nmap
+    - python
+    - python3
+
+- name: "Ensure latest utility packages with pip"
+  pip: name={{ item }} state=latest
+  with_items:
+    - virtualenv

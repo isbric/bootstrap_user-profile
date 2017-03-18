@@ -1,0 +1,8 @@
+# git
+- name: "Ensure latest git with brew"
+  homebrew: name=git state=latest
+
+- name: "Ensure ~/.gitconfig latest"
+  template:
+    src: dot_gitconfig.j2
+    dest: ~/.gitconfig

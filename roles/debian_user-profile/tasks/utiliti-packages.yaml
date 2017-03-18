@@ -1,0 +1,14 @@
+- name: "Ensure latest utility packages with apt"
+  apt: name={{ item }} state=latest
+  with_items:
+    - pv
+    - ent
+    - nmap
+    - python
+    - python3
+
+- name: "Ensure latest utility packages with pip"
+  pip: name={{ item }} state=latest
+  with_items:
+    - pip
+    - virtualenv

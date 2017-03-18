@@ -1,0 +1,9 @@
+# vim
+- name: "Ensure latest vim package with brew"
+  homebrew: name=vim state=latest install_options=env-std,with-override-system-vim
+
+- name: "Ensure ~/.vimrc latest"
+  template: src=dot_vimrc.j2 dest=~/.vimrc
+
+- name: "Ensure latest vim files in ~/.vim/"
+  copy: src=vim/ dest=~/.vim/

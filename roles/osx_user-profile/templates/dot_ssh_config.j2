@@ -1,0 +1,15 @@
+Host *
+#   SendEnv LANG LC_*
+   GSSAPIAuthentication yes
+   GSSAPIDelegateCredentials yes
+   ConnectTimeout 0
+   TCPKeepAlive yes
+   ServerAliveInterval 60
+   ServerAliveCountMax 10
+   IdentityFile ~/.ssh/id_rsa
+
+
+Host github.com
+   Port 22
+   User git
+   IdentityFile ~/.ssh/id_rsa

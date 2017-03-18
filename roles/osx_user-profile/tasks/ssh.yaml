@@ -1,0 +1,8 @@
+# ssh
+- name: "Ensure ~/.ssh/ directory present"
+  file: path=~/.ssh state=directory
+
+- name: "Ensure ~/.ssh/config latest"
+  template:
+    src: dot_ssh_config.j2
+    dest: ~/.ssh/config

@@ -1,0 +1,10 @@
+---
+# Thsi playbook applys roles to localhost
+
+- name: "Apply roles to localhost"
+  hosts: localhost
+  gather_facts: yes
+
+  roles:
+    - { role: osx_user-profile, tags: ['osx', 'user-profile'],  when: ansible_distribution == "MacOSX" }
+    - { role: osx_user-profile-extended, tags: ['osx', 'user-profile-extended'],  when: ansible_distribution == "MacOSX" }

@@ -1,0 +1,9 @@
+# pip
+- name: "Ensure latest pip with pip"
+  pip: name=pip state=latest
+
+- name: "Ensure ~/.pip/ directory present"
+  file: path=~/.pip state=directory
+
+- name: "Ensure ~/.ansible/ansible.cfg latest"
+  template: src=pip.conf.j2 dest=~/.pip/pip.conf

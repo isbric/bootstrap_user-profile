@@ -1,0 +1,22 @@
+# Ansible
+- name: "Ensure latest ansible with pip"
+  pip: name=ansible state=latest
+
+- name: "Ensure ~/.ansible/ directory present"
+  file: path=~/.ansible state=directory
+
+- name: "Ensure ~/.ansible/modules/ directory present"
+  file: path=~/.ansible/modules state=directory
+
+- name: "Ensure ~/.ansible/plugins/ directory present"
+  file: path=~/.ansible/plugins state=directory
+
+- name: "Ensure ~/.ansible/ansible.cfg latest"
+  template:
+    src: ansible.cfg.j2
+    dest: ~/.ansible/ansible.cfg
+
+- name: "Ensure ~/.ansible/inventory latest"
+  template:
+    src: ansible_default_inventory.j2
+    dest: ~/.ansible/inventory

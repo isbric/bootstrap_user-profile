@@ -1,0 +1,19 @@
+# bash
+- name: "Ensure latest bash-completion with brew"
+  homebrew: name=bash-completion state=latest
+
+- name: "Enabling brewing tap for bash-completion"
+  homebrew_tap: name=homebrew/completions state=present
+
+- name: "Ensure ~/.profile latest"
+  template:
+    src: dot_profile.j2
+    dest: ~/.profile
+  register: refresh profile
+
+# Todo
+#cp -R user-profile.git/src/.bash_completions ~/
+#brew install vagrant-completion
+#cp $(brew --prefix)/etc/bash_completion.d/vagrant ~/.bash_completions/vagrant-completion.bash
+#chmod 600 ~/.bash_completions/*
+

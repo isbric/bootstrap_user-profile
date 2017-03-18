@@ -1,0 +1,6 @@
+# tmux
+- name: "Ensure latest tmux with brew"
+  homebrew: name=tmux state=latest
+
+- name: "Ensure ~/.ansible/ansible.cfg latest"
+  template: src=tmux.conf.j2 dest=~/.tmux.conf

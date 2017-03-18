@@ -1,0 +1,25 @@
+# Bash completions
+#for f in $(ls ~/.bash_completions/*-completion.bash); do
+#	. "$f"
+#done
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# Terminal
+export LC_ALL=en_US.UTF-8
+export PS1='\[\e[0;32m\]\u@\h\[\e[m\]\[\e[1;34m\]:\W\[\e[m\] \$ '
+
+# Ansible
+export ANSIBLE_CONFIG=~/.ansible/ansible.cfg
+export ANSIBLE_HOSTS=~/.ansible/inventory
+export ANSIBLE_LIBRARY=~/.ansible/modules/
+
+#export KRB5CCNAME=${HOME}/.krb5.ccache
+#alias minit='kinit -c ~/.krb5.ccache $USER && klist -c ~/.krb5.ccache'
+
+# Lazy hands
+alias ll='ls -laG'
+alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
+
+# CLI googling
+alias chrome="open -a /Applications/Google\ Chrome.app"
+function google() { for arg in "$@"; do open -a /Applications/Google\ Chrome.app "https://google.com/search?q=${arg}"; done }

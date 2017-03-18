@@ -1,0 +1,4 @@
+# homebrew
+- name: "Ensure homebrew is up to speed"
+  homebrew: update_homebrew=yes
+  tags: homebrew_update

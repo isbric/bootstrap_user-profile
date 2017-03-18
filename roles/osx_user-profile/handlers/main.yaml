@@ -1,0 +1,11 @@
+- name: refresh profile
+  shell: echo ".profile updated by ansible, run \"source ~/.profile\"". | write {{ ansible_user }}
+  tags: handler
+
+- name: refresh_iterm2
+  shell: echo "iTerm2 settings updated by ansible, restart iTerm2." | write {{ ansible_user }}
+  tags: handler
+
+- name: powerline_config
+  command: powerline-config --reload
+  when: powerline_config.changed
