@@ -1,6 +1,6 @@
 # gitmultirepo
 - name: "Ensure latest gitmultirepo with pip"
-  pip: name=git+https://github.com/isbric/gitmultirepo.git@v0.1.rc1#egg=gitmultirepo-v0.1.rc1 state=latest
+  pip: name=git+https://github.com/isbric/gitmultirepo.git@v0.0.1.rc1#egg=gitmultirepo-v0.0.1.rc1 state=latest
 
 - name: "Ensure ~/.gitmultirepo directory present"
   file: path=~/.gitmultirepo state=directory
