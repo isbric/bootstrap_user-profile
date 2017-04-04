@@ -21,6 +21,8 @@ export KRB5CCNAME=${HOME}/.krb5.ccache
 alias minit='kinit -c ~/.krb5.ccache $USER && klist -c ~/.krb5.ccache'
 
 # Lazy hands
+alias pyprofile="python -m cProfile -s cumtime $@"
+function pylineprofile() { python -m kernprof -l $@; python -m line_profiler $1.lprof; }
 alias ll='ls -laG'
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
 
