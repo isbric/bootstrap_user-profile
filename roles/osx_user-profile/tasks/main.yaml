@@ -15,6 +15,9 @@
 - include: gitmultirepo.yaml
   tags: gitmultirepo
 
+- include: google_chrome.yaml
+  tags: google_chrome
+
 - include: homebrew.yaml
   tags: homebrew
 

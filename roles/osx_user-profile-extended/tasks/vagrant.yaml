@@ -3,7 +3,7 @@
   become: yes
   changed_when: false
 
-- name: "Ensure absent vagrant with brew"
+- name: "Ensure absent vagrant with brewv, tag=reinstall_brew_casks"
   homebrew_cask: name=vagrant state=absent
   when: reinstall_brew_casks | default('no') | bool
 
