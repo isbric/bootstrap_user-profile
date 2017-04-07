@@ -3,7 +3,7 @@
   become: yes
   changed_when: false
 
-- name: "Ensure homebrew cask virtualbox absent, tag=reinstall_brew_casks"
+- name: "Ensure homebrew cask virtualbox absent, --extra-vars reinstall_brew_casks=yes"
   homebrew_cask: name=virtualbox state=absent
   when: reinstall_brew_casks | default('no') | bool
 

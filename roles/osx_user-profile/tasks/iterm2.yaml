@@ -4,7 +4,7 @@
   become: yes
   changed_when: false
 
-- name: "Ensure homebrew cask iTerm2 absent, tag=reinstall_brew_casks"
+- name: "Ensure homebrew cask iTerm2 absent, --extra-vars reinstall_brew_casks=yes"
   homebrew_cask: name=iterm2 state=absent
   when: reinstall_brew_casks | default('no') | bool
 
