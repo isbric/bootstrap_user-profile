@@ -6,17 +6,12 @@
 
 > when work feels overwhelming remember that you're going to **die**
 
-## Todo
- listed under
-```shell
-  ./todo
-```
 
 ## Usage
 ```shell
-  ./install.sh
+  ./install.sh -K
 ```
 or
 ```shell
-  ansible-playbook bootstrap.yaml
+  ansible-playbook -K bootstrap.yaml
 ```
