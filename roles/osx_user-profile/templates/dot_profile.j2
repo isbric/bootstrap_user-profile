@@ -27,8 +27,8 @@ alias ll='ls -laG'
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
 
 # CLI googling
-alias chrome="open -a /Applications/Google\ Chrome.app"
-function google() { for arg in "$@"; do open -a /Applications/Google\ Chrome.app "https://google.com/search?q=${arg}"; done }
+function chrome() { for arg in "$@"; do open -a "Google Chrome" ${arg}; done }
+function google() { for arg in "$@"; do open -a "Google Chrome" "https://google.com/search?q=${arg}"; done }
 
 # Powerline
 # if installed, then use it
