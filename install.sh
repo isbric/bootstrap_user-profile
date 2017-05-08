@@ -17,12 +17,15 @@ elif [[ "Linux" == "$(uname)" ]]; then
 fi
 
 # Check if ansible is installed and callable
-ansible --version > /dev/null
-if [[ "$?" != "0" ]]; then
+ansible --version &> /dev/null
+if [[ "$?" == "0" ]]; then
+	echo "Ansible version $(ansible --version) installed."
+
+elif [[ "$?" != "0" ]]; then
 
 	echo "Installing ansible for ${OS}..."
 
-	if [[ "${OS}" == "osx" ]]; then 
+	if [[ "${OS}" == "osx" ]]; then
 
 		echo "Processing dependencies for ansible.."
 		cc --version
@@ -31,7 +34,7 @@ if [[ "$?" != "0" ]]; then
 			exit 1
 		fi
 
-		brew --version > /dev/null
+		brew --version &> /dev/null
 		if [[ "$?" != "0" ]]; then
 			echo "Installing homebrew..."
 			/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -60,9 +63,9 @@ if [[ "$?" != "0" ]]; then
 
 	elif [[ "${OS}" == "centos" ]]; then
 
-		yum install -y epel-release
+		sudo yum install -y epel-release
 		if [[ "$?" != "0" ]]; then echo "terminating!" ; exit $?; fi
-		yum install -y ansible
+		sudo yum install -y ansible
 		if [[ "$?" != "0" ]]; then echo "terminating!" ; exit $?; fi
 
 
@@ -82,9 +85,17 @@ echo "Creating temp inventory file: \"${TMPINV}\""
 echo "localhost		ansible_connection=local" > $TMPINV
 
 ansible-playbook -i ${TMPINV} bootstrap.yaml ${*}
+if [[ "$?" != "0" ]]; then
+	RC="$?"
+	echo "ansible provisioning exited with return code $?"
+else
+	RC="0"
+fi
+
 
 # Cleanup
 echo "Clening up..."
 echo -n "Removing temp inventory file: "
 rm -v $TMPINV
 
+exit $RC
