@@ -21,14 +21,15 @@ export KRB5CCNAME=${HOME}/.krb5.ccache
 alias minit='kinit -c ~/.krb5.ccache $USER && klist -c ~/.krb5.ccache'
 
 # Lazy hands
+alias date="date '+%Y-%m-%d %H:%M:%S'"
 alias pyprofile="python -m cProfile -s cumtime $@"
 function pylineprofile() { python -m kernprof -l $@; python -m line_profiler $1.lprof; }
 alias ll='ls -laG'
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
 
 # CLI googling
-alias chrome="open -a /Applications/Google\ Chrome.app"
-function google() { for arg in "$@"; do open -a /Applications/Google\ Chrome.app "https://google.com/search?q=${arg}"; done }
+function chrome() { for arg in "$@"; do open -a "Google Chrome" ${arg}; done }
+function google() { for arg in "$@"; do open -a "Google Chrome" "https://google.com/search?q=${arg}"; done }
 
 # Powerline
 # if installed, then use it
