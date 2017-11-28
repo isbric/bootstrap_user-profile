@@ -1,4 +1,4 @@
-# iTerm2
+# Google Chrome
 - name: "Run this task before homebrew_cask module, so that sudo cache gets refreshed."
   command: "echo none"
   become: yes
@@ -7,6 +7,8 @@
 - name: "Ensure homebrew cask google-chrome absent, --extra-vars reinstall_brew_casks=yes"
   homebrew_cask: name=google-chrome state=absent
   when: reinstall_brew_casks | default('no') | bool
+  tags: google_chrome
 
 - name: "Ensure homebrew cask google-chrome present"
   homebrew_cask: name=google-chrome state=present
+  tags: google_chrome

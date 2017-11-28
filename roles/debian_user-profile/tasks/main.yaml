@@ -1,5 +1,7 @@
-- include: ansible.yaml
-- include: bash.yaml
-- include: git.yaml
-- include: ssh.yaml
-- include: utiliti-packages.yaml
+# Tasks to include
+#
+- include_tasks: ansible.yaml
+- include_tasks: bash.yaml
+- include_tasks: git.yaml
+- include_tasks: ssh.yaml
+- include_tasks: utiliti-packages.yaml

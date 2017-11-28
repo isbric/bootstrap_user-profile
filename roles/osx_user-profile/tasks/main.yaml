@@ -1,47 +1,47 @@
 # Tasks to include
 #
 # sh -c "$(head -4 main.yaml | tail -1 | sed 's/^# //')"
-# head -5 main.yaml > new.main.yaml && for var in $(ls | grep -v "main.yaml" | sed 's/\.yaml$//' | sort); do printf "%s include: %s.yaml\n  tags: %s\n\n" "-" "${var}" "${var}";done >> new.main.yaml && mv new.main.yaml main.yaml
+# head -5 main.yaml > new.main.yaml && for var in $(ls | grep -v "main.yaml" | sed 's/\.yaml$//' | sort); do printf "%s include_tasks: %s.yaml\n  tags: %s\n\n" "-" "${var}" "${var}";done >> new.main.yaml && mv new.main.yaml main.yaml
 #
-- include: ansible.yaml
+- include_tasks: ansible.yaml
   tags: ansible
 
-- include: bash.yaml
+- include_tasks: bash.yaml
   tags: bash
 
-- include: git.yaml
+- include_tasks: git.yaml
   tags: git
 
-- include: gitmultirepo.yaml
+- include_tasks: gitmultirepo.yaml
   tags: gitmultirepo
 
-- include: google_chrome.yaml
+- include_tasks: google_chrome.yaml
   tags: google_chrome
 
-- include: homebrew.yaml
+- include_tasks: homebrew.yaml
   tags: homebrew
 
-- include: iterm2.yaml
+- include_tasks: iterm2.yaml
   tags: iterm2
 
-- include: karabiner-elements.yaml
+- include_tasks: karabiner-elements.yaml
   tags: karabiner-elements
 
-- include: pip.yaml
+- include_tasks: pip.yaml
   tags: pip
 
-- include: powerline.yaml
+- include_tasks: powerline.yaml
   tags: powerline
 
-- include: ssh.yaml
+- include_tasks: ssh.yaml
   tags: ssh
 
-- include: tmux.yaml
+- include_tasks: tmux.yaml
   tags: tmux
 
-- include: utiliti-packages.yaml
+- include_tasks: utiliti-packages.yaml
   tags: utiliti-packages
 
-- include: vim.yaml
+- include_tasks: vim.yaml
   tags: vim
 
