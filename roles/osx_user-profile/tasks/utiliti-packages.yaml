@@ -7,6 +7,7 @@
     - nmap
     - python
     - python3
+    - python@2
 
 - name: "Ensure latest utility packages with pip"
   pip: name={{ item }} state=latest

@@ -5,5 +5,5 @@
 - name: "Ensure ~/.pip/ directory present"
   file: path=~/.pip state=directory
 
-- name: "Ensure ~/.ansible/ansible.cfg latest"
+- name: "Ensure ~/.pip/pip.cfg latest"
   template: src=pip.conf.j2 dest=~/.pip/pip.conf

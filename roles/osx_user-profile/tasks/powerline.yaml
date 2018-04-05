@@ -1,6 +1,6 @@
 # powerline-status
-- name: "Ensure latest powerline-status with pip"
-  pip: name=powerline-status state=latest
+- name: "Ensure latest powerline-status with pip3"
+  pip: name=powerline-status state=latest executable=pip3
 
 - name: "Ensure ~/.config/powerline/ directory present"
   file: path=~/.config/powerline state=directory
