@@ -1,7 +1,9 @@
 # Tasks to include
 #
-- include_tasks: virtualbox.yaml
-  tags: virtualbox
+- import_tasks: virtualbox.yaml
+  tags:
+    - virtualbox
 
-- include_tasks: vagrant.yaml
-  tags: vagrant
+- import_tasks: vagrant.yaml
+  tags:
+    - vagrant

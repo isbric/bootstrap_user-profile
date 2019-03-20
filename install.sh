@@ -46,6 +46,13 @@ elif [[ "$?" != "0" ]]; then
 		fi
 
 		brew install python
+		#brew install python@2
+
+		pip --version &> /dev/null
+		if [[ "$?" != "0" ]]; then
+			echo "Installing pip..."
+			python -m easy_install pip
+		fi
 		pip install --upgrade pip
 		if [[ "$?" != "0" ]]; then echo "terminating!" ; exit $?; fi
 		pip install ansible
@@ -80,22 +87,14 @@ fi # !ansible
 
 
 echo "Applying bootstrap.yaml with ansible..."
-TMPINV="$(echo ~/tmp_bootstrap_inventory)"
-echo "Creating temp inventory file: \"${TMPINV}\""
 echo "localhost		ansible_connection=local" > $TMPINV
 
-ansible-playbook -i ${TMPINV} bootstrap.yaml ${*}
+ansible-playbook -i <(<<<"localhost ansible_connection=local") bootstrap.yaml ${*}
 if [[ "$?" != "0" ]]; then
 	RC="$?"
 	echo "ansible provisioning exited with return code $?"
 else
 	RC="0"
 fi
-
-
-# Cleanup
-echo "Clening up..."
-echo -n "Removing temp inventory file: "
-rm -v $TMPINV
 
 exit $RC

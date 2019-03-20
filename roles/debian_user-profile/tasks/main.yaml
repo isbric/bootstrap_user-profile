@@ -1,7 +1,7 @@
 # Tasks to include
 #
-- include_tasks: ansible.yaml
-- include_tasks: bash.yaml
-- include_tasks: git.yaml
-- include_tasks: ssh.yaml
-- include_tasks: utiliti-packages.yaml
+- import_tasks ansible.yaml
+- import_tasks bash.yaml
+- import_tasks git.yaml
+- import_tasks ssh.yaml
+- import_tasks utiliti-packages.yaml

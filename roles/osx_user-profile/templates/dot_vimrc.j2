@@ -12,25 +12,31 @@ set ttimeoutlen=50
 autocmd BufWritePre * %s/\s\+$//e
 
 
-"--- Search --------------------" 
+"--- Search --------------------"
 set hlsearch
 set incsearch
 
-"--- Wild modes/menu -----------" 
+"--- Wild modes/menu -----------"
 set wildmenu
 set wildmode=longest:list,full
 
-"--- Visuals -------------------" 
+"--- Visuals -------------------"
 " Useful link -> http://bytefluent.com/vivify/
 colorscheme default
 
 set number
 set laststatus=2
 
-"--- Powerline -----------------" 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"--- Plug ---------------------."
+call plug#begin('~/.vim/plugged')
+" Install vimpyter plugin "
+Plug 'szymonmaszke/vimpyter'	"vim-jupyter
+call plug#end()
+
+"--- Powerline -----------------"
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 "set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set fillchars+=stl:\ ,stlnc:\

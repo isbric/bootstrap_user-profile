@@ -26,6 +26,7 @@ alias pyprofile="python -m cProfile -s cumtime $@"
 function pylineprofile() { python -m kernprof -l $@; python -m line_profiler $1.lprof; }
 alias ll='ls -laG'
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
+alias ipython="python -m IPython"
 
 # CLI googling
 function chrome() { for arg in "$@"; do open -a "Google Chrome" ${arg}; done }

@@ -1,4 +1,4 @@
-# Utilities
+# file: Utility-packages.yaml
 - name: "Ensure latest utility packages with brew"
   homebrew: name={{ item }} state=latest
   with_items:
@@ -7,10 +7,17 @@
     - nmap
     - python
     - python3
-    - python@2
+    - ipython
+    - jupyter
+#    - python@2
 
 - name: "Ensure latest utility packages with pip"
   pip: name={{ item }} state=latest
   with_items:
     - virtualenv
-    - line-profiler
+    #- line-profiler
+    - notedown
+    - jupyterthemes
+
+- name: "Set Jupyter theme"
+  shell: jt -t chesterish

@@ -2,8 +2,8 @@
 - name: "Ensure latest bash-completion with brew"
   homebrew: name=bash-completion state=latest
 
-- name: "Enabling brewing tap for bash-completion"
-  homebrew_tap: name=homebrew/completions state=present
+#- name: "Enabling brewing tap for bash-completion"
+#  homebrew_tap: name=homebrew/completions state=present
 
 - name: "Ensure ~/.profile latest"
   template:
