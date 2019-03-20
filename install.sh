@@ -46,7 +46,9 @@ elif [[ "$?" != "0" ]]; then
 		fi
 
 		brew install python
-		#brew install python@2
+
+		ln -is /usr/local/bin/python{3,}
+		ln -is /usr/local/bin/pip{3,}
 
 		pip --version &> /dev/null
 		if [[ "$?" != "0" ]]; then
@@ -87,8 +89,6 @@ fi # !ansible
 
 
 echo "Applying bootstrap.yaml with ansible..."
-echo "localhost		ansible_connection=local" > $TMPINV
-
 ansible-playbook -i <(<<<"localhost ansible_connection=local") bootstrap.yaml ${*}
 if [[ "$?" != "0" ]]; then
 	RC="$?"
