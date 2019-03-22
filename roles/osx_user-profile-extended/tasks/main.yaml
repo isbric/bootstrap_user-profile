@@ -8,6 +8,10 @@
   tags:
     - vagrant
 
+- import_tasks: kubernetes-cli.yaml
+  tags:
+    - kubernetes_cli
+
 - import_tasks: minikube.yaml
   tags:
     - minikube
