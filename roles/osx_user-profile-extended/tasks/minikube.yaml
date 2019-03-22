@@ -4,4 +4,4 @@
   changed_when: false
 
 - name: "Ensure latest minikube with brew"
-  homebrew_cask: name=vagrant state=present
+  homebrew_cask: name=minikube state=latest

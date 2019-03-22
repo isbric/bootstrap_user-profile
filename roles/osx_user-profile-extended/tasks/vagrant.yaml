@@ -7,7 +7,7 @@
   homebrew_cask: name=vagrant state=absent
   when: reinstall_brew_casks | default('no') | bool
 
-- name: "Ensure absent latest vagrant with brew"
+- name: "Ensure latest vagrant with brew"
   homebrew_cask: name=vagrant state=present
 
 - name: "Ensure ~/vagrant directory present"
