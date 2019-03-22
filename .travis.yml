@@ -24,8 +24,5 @@ matrix:
         - JOB_NAME: boostrap_user-profile
         - JOB_OS: precise
 
-install:
-  - ./install.sh
-
 script:
-  - ansible-playbook bootstrap.yaml
+  - ./install.sh
