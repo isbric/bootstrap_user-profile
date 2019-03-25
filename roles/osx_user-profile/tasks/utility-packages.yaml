@@ -4,6 +4,7 @@
     name:
       - pv
       - ent
+      - tree
       - nmap
       - python
       - python3
