@@ -3,6 +3,8 @@
   homebrew: name=git state=latest
 
 - name: "Ensure ~/.gitconfig latest"
-  template:
-    src: dot_gitconfig.j2
+  blockinfile:
     dest: ~/.gitconfig
+    content: "{{ lookup('template', 'dot_gitconfig.j2') }}"
+    insertbefore: BOF
+    create: yes
