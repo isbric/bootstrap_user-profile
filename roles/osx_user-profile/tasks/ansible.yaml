@@ -4,7 +4,7 @@
 
 - name: "Ensure skel ~/.ansible/"
   file:
-    path: =~/.ansible/{{item}}
+    path: ~/.ansible/{{item}}
     state: directory
   with_items:
     - modules

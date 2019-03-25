@@ -47,8 +47,8 @@ elif [[ "$?" != "0" ]]; then
 
 		brew install python
 
-		ln -is /usr/local/bin/python{3,}
-		ln -is /usr/local/bin/pip{3,}
+		ln -vs /usr/local/bin/python{3,}
+		ln -vs /usr/local/bin/pip{3,}
 
 		pip --version &> /dev/null
 		if [[ "$?" != "0" ]]; then

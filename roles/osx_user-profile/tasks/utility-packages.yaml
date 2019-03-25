@@ -5,6 +5,7 @@
       - pv
       - ent
       - tree
+      - pstree
       - nmap
       - python
       - python3
