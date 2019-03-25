@@ -1,5 +1,15 @@
-
 [defaults]
+internal_poll_interval=0.001
+gathering = smart
+gather_subset = all
 inventory = ~/.ansible/inventory
 library = ~/.ansible/modules
-callback:plugins = ~/.ansible/pluginns/callback:/usr/local/lib/python2.7/site-packages/ansible/plugins/callback/
+bin_ansible_callbacks=True
+callback_plugins = ~/.ansible/plugins/callback
+display_skipped_hosts = False
+
+#stdout_callback = dense
+#stdout_callback = minimal
+#stdout_callback = unixy
+#stdout_callback = skippy
+#stdout_callback = tree

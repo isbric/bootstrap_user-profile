@@ -7,6 +7,7 @@ set backspace=indent,eol,start
 syntax on
 set t_Co=256
 set ttimeoutlen=50
+set scrolloff=6
 
 "--- autocmd's -----------------"
 autocmd BufWritePre * %s/\s\+$//e
@@ -26,6 +27,7 @@ colorscheme default
 
 set number
 set laststatus=2
+set novisualbell
 
 "--- Plug ---------------------."
 call plug#begin('~/.vim/plugged')

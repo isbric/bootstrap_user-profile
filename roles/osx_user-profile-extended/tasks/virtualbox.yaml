@@ -1,8 +1,4 @@
-- name: "Run this task before homebrew_cask module, so that sudo cache gets refreshed."
-  command: "echo none"
-  become: yes
-  changed_when: false
-
+# Virtualbox
 - name: "Ensure homebrew cask virtualbox absent, --extra-vars reinstall_brew_casks=yes"
   homebrew_cask: name=virtualbox state=absent
   when: reinstall_brew_casks | default('no') | bool

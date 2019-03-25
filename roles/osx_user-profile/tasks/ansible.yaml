@@ -2,21 +2,24 @@
 - name: "Ensure latest ansible with pip"
   pip: name=ansible state=latest
 
-- name: "Ensure ~/.ansible/ directory present"
-  file: path=~/.ansible state=directory
+- name: "Ensure skel ~/.ansible/"
+  file:
+    path: =~/.ansible/{{item}}
+    state: directory
+  with_items:
+    - modules
+    - plugins
 
-- name: "Ensure ~/.ansible/modules/ directory present"
-  file: path=~/.ansible/modules state=directory
-
-- name: "Ensure ~/.ansible/plugins/ directory present"
-  file: path=~/.ansible/plugins state=directory
-
-- name: "Ensure ~/.ansible/ansible.cfg latest"
-  template:
-    src: ansible.cfg.j2
+- name: "Ensure defaults in  ~/.ansible/ansible.cfg"
+  blockinfile:
     dest: ~/.ansible/ansible.cfg
+    content: "{{ lookup('template', 'ansible.cfg.j2') }}"
+    insertbefore: BOF
+    create: yes
 
-- name: "Ensure ~/.ansible/inventory latest"
-  template:
-    src: ansible_default_inventory.j2
+- name: "Ensure defaults in ~/.ansible/inventory"
+  blockinfile:
     dest: ~/.ansible/inventory
+    content: "{{ lookup('template', 'ansible_default_inventory.j2') }}"
+    insertbefore: BOF
+    create: yes

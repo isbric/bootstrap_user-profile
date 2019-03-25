@@ -1,5 +1,4 @@
 # Tasks to include
-#
 - import_tasks: virtualbox.yaml
   tags:
     - virtualbox

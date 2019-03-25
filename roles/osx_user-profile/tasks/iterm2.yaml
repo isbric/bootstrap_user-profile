@@ -1,9 +1,4 @@
 # iTerm2
-- name: "Run this task before homebrew_cask module, so that sudo cache gets refreshed."
-  command: "true"
-  become: yes
-  changed_when: false
-
 - name: "Ensure homebrew cask iTerm2 absent, --extra-vars reinstall_brew_casks=yes"
   homebrew_cask: name=iterm2 state=absent
   when: reinstall_brew_casks | default('no') | bool

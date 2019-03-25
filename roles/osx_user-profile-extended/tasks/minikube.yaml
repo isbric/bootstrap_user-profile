@@ -1,7 +1,3 @@
-- name: "Run this task before homebrew_cask module, so that sudo cache gets refreshed."
-  command: "echo none"
-  become: yes
-  changed_when: false
-
+# Minikube
 - name: "Ensure latest minikube with brew"
   homebrew_cask: name=minikube state=latest
