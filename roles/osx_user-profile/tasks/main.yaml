@@ -42,3 +42,5 @@
 - import_tasks: vim.yaml
   tags: vim
 
+- import_tasks: ipython.yaml
+  tags: ipython
