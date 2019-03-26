@@ -25,6 +25,11 @@ alias date="date '+%Y-%m-%d %H:%M:%S'"
 alias pyprofile="python -m cProfile -s cumtime $@"
 function pylineprofile() { python -m kernprof -l $@; python -m line_profiler $1.lprof; }
 alias ll='ls -laG'
+alias go='git co'
+alias gi='git ci'
+alias gs='git st'
+alias gl='git ll'
+
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
 alias ipython="python -m IPython"
 
