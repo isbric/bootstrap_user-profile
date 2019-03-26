@@ -17,4 +17,5 @@
   pip:
     name:
       - virtualenv
+      - python-nmap
     state: latest
