@@ -3,6 +3,12 @@
   homebrew_cask: name=virtualbox state=absent
   when: reinstall_brew_casks | default('no') | bool
 
+- name: "Refresh sudo"
+  shell: "true"
+  become: yes
+  changed_when: False
+
 - name: "Ensure homebrew cask virtualbox present"
   homebrew_cask: name=virtualbox state=latest
+  become: yes
 
