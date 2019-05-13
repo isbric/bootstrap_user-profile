@@ -1,0 +1,5 @@
+# Set chrome as default browser
+- name: "Ensure default browser"
+  shell: open -a "Google Chrome" --args --make-default-browser
+  tags: chrome
+  when: ansible_distribution == "MacOSX"
