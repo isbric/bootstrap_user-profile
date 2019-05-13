@@ -1,0 +1,5 @@
+# Docker
+- name: "Docker"
+  block:
+    - name: "Ensure latest vim package with brew"
+      homebrew_cask: name=docker state=latest
