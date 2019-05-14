@@ -1,0 +1,6 @@
+# Openstack client
+
+- name: "Ensure openstackclient present with pip"
+  pip: name=python-openstackclient state=present
+  tags: openstackclient
+
