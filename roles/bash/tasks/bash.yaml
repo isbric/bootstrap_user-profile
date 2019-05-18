@@ -1,9 +1,10 @@
 # bash
-- name: "Ensure latest bash-completion with brew"
+- name: "Ensure latest bash-completion package with brew"
   homebrew: name=bash-completion state=latest
 
-#- name: "Enabling brewing tap for bash-completion"
-#  homebrew_tap: name=homebrew/completions state=present
+- name: "Ensure directory {{ bash.user_bash_completions_directory }} present"
+  file: path={{ bash.user_bash_completions_directory }} state=directory
+  when: bash.user_bash_completions_directory is defined
 
 - name: "Ensure ~/.profile latest"
   template:
@@ -11,8 +12,8 @@
     dest: ~/.profile
   register: refresh profile
 
+
 # Todo
-#cp -R user-profile.git/src/.bash_completions ~/
 #brew install vagrant-completion
 #cp $(brew --prefix)/etc/bash_completion.d/vagrant ~/.bash_completions/vagrant-completion.bash
 #chmod 600 ~/.bash_completions/*

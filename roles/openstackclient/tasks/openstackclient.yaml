@@ -4,8 +4,12 @@
   pip: name=python-openstackclient state=present
   tags: openstackclient
 
+- name: "install openstackclient bash_completion DEBUG"
+  debug: msg = "openstack complete > {{ user_bash_completions_directory }}/openstack"
+  when: user_bash_completions_directory is defined
+  tags: openstackclient
+
 - name: "install openstackclient bash_completion"
-  shell: "openstack complete > {{ user_bash_completions_dir }}/osc.bash_completion"
-  when: user_bash_completions_dir is defined
-  ignore_errors: True
+  shell: openstack complete > {{ user_bash_completions_directory }}/openstack
+  when: user_bash_completions_directory is defined
   tags: openstackclient

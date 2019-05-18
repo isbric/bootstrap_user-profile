@@ -1,8 +1,10 @@
 # Bash completions
-#for f in $(ls ~/.bash_completions/*-completion.bash); do
-#	. "$f"
-#done
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+{% if bash.user_bash_completions_directory %}
+[ -d {{ bash.user_bash_completions_directory }} ] && for f in $(ls {{ bash.user_bash_completions_directory }}); do
+	[ -f "$f" ] && . "$f"
+done
+{% endif %}
 
 # Terminal
 export LC_ALL=en_US.UTF-8

@@ -1,0 +1,6 @@
+---
+# all vars
+
+bash:
+  user_bash_completions_directory: ~/.bash_completions
+

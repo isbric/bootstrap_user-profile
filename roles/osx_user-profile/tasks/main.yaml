@@ -6,9 +6,6 @@
 - import_tasks: ansible.yaml
   tags: ansible
 
-- import_tasks: bash.yaml
-  tags: bash
-
 - import_tasks: git.yaml
   tags: git
 
