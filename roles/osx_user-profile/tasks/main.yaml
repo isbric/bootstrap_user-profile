@@ -24,9 +24,6 @@
 - import_tasks: pip.yaml
   tags: pip
 
-- import_tasks: powerline.yaml
-  tags: powerline
-
 - import_tasks: ssh.yaml
   tags: ssh
 

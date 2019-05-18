@@ -39,6 +39,7 @@ alias ipython="python -m IPython"
 function chrome() { for arg in "$@"; do open -a "Google Chrome" ${arg}; done }
 function google() { for arg in "$@"; do open -a "Google Chrome" "https://google.com/search?q=${arg}"; done }
 
+{% if bash.powerline %}
 # Powerline
 # if installed, then use it
 command -v powerline-daemon &>/dev/null
@@ -48,3 +49,4 @@ if [[ "$?" == "0" ]]; then
 	POWERLINE_BASH_SELECT=1
 	. $(pip show powerline-status | grep "Location" | awk '{print $2}')/powerline/bindings/bash/powerline.sh
 fi
+{% endif %}

@@ -2,3 +2,9 @@
 - import_tasks: bash.yaml
   tags: bash
 
+- import_tasks: completions.yaml
+  tags: completions
+
+- import_tasks: powerline.yaml
+  tags: bash
+  when: (bash.powerline is defined and bash.powerline == True)
