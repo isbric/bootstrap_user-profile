@@ -33,9 +33,6 @@
 - import_tasks: utility-packages.yaml
   tags: utility-packages
 
-- import_tasks: vim.yaml
-  tags: vim
-
 - import_tasks: ipython.yaml
   tags: ipython
 

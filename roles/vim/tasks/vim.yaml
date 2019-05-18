@@ -1,0 +1,17 @@
+# vim
+- name: "Ensure latest vim package with brew"
+  homebrew: name=vim state=latest
+
+- name: "Ensure ~/.vimrc latest"
+  template: src=dot_vimrc.j2 dest=~/.vimrc
+
+- name: "Ensure directories in ~/.vim/"
+  file: state=directory path=~/.vim/{{ item }}
+  with_items:
+    - autoload
+    - colors
+    - after
+
+- name: "Ensure latest vim files in ~/.vim/"
+  copy: src=vim/ dest=~/.vim/
+

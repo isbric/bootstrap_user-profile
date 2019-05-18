@@ -1,0 +1,3 @@
+# vim-plug
+- name: "Ensure latest plug-vim"
+  get_url: url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim dest=~/.vim/autoload/plug.vim

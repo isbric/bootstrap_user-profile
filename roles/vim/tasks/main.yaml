@@ -1,0 +1,7 @@
+# Tasks to include
+- import_tasks: vim.yaml
+  tags: vim
+
+- import_tasks: vim-plug.yaml
+  tags: vim-plug
+

@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'szymonmaszke/vimpyter'	"vim-jupyter
 call plug#end()
 
+{% if bash.powerline %}
 "--- Powerline -----------------"
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
@@ -48,3 +49,4 @@ python3 del powerline_setup
 "set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set fillchars+=stl:\ ,stlnc:\
+{% endif %}

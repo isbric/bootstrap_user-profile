@@ -9,4 +9,5 @@
     - { role: osx_user-profile, tags: ['osx', 'user-profile'],  when: ansible_distribution == "MacOSX" }
     - { role: osx_user-profile-extended, tags: ['osx', 'user-profile-extended'],  when: ansible_distribution == "MacOSX" }
     - { role: bash, tags: ['bash'],  when: ansible_distribution == "MacOSX" }
+    - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
