@@ -1,0 +1,4 @@
+# Tasks to include
+- import_tasks: git.yaml
+  tags: git
+

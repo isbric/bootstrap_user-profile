@@ -6,9 +6,6 @@
 - import_tasks: ansible.yaml
   tags: ansible
 
-- import_tasks: git.yaml
-  tags: git
-
 - import_tasks: gitmultirepo.yaml
   tags: gitmultirepo
 
