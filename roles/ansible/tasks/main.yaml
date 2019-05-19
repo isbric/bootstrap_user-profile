@@ -1,0 +1,3 @@
+# Tasks to include
+- import_tasks: ansible.yaml
+  tags: ansible
