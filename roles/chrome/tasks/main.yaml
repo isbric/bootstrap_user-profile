@@ -1,0 +1,10 @@
+# Tasks to include
+#
+# sh -c "$(head -4 main.yaml | tail -1 | sed 's/^# //')"
+# head -5 main.yaml > new.main.yaml && for var in $(ls | grep -v "main.yaml" | sed 's/\.yaml$//' | sort); do printf "%s import_tasks: %s\n  tags: %s\n\n" "-" "${var}" "${var}";done >> new.main.yaml && mv new.main.yaml main.yaml
+#
+- import_tasks: chrome.yaml
+  tags: chrome
+
+- import_tasks: set_default_browser.yaml
+  tags: chrome

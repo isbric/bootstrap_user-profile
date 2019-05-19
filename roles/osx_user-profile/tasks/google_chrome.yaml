@@ -1,9 +1,0 @@
-# Google Chrome
-- name: "Ensure homebrew cask google-chrome absent, --extra-vars reinstall_brew_casks=yes"
-  homebrew_cask: name=google-chrome state=absent
-  when: reinstall_brew_casks | default('no') | bool
-  tags: google_chrome
-
-- name: "Ensure homebrew cask google-chrome present"
-  homebrew_cask: name=google-chrome state=present
-  tags: google_chrome

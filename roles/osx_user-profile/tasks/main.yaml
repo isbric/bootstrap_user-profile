@@ -6,9 +6,6 @@
 - import_tasks: gitmultirepo.yaml
   tags: gitmultirepo
 
-- import_tasks: google_chrome.yaml
-  tags: google_chrome
-
 - import_tasks: homebrew.yaml
   tags: homebrew
 
