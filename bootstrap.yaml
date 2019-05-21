@@ -10,6 +10,7 @@
     - { role: osx_user-profile-extended, tags: ['osx', 'user-profile-extended'],  when: ansible_distribution == "MacOSX" }
     - { role: bash, tags: ['bash'],  when: ansible_distribution == "MacOSX" }
     - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
+    - { role: pip, tags: ['osx', 'user-profile-headless']}
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
     - { role: docker, tags: ['osx', 'user-profile-desktop']}

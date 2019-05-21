@@ -12,9 +12,6 @@
 - import_tasks: iterm2.yaml
   tags: iterm2
 
-- import_tasks: pip.yaml
-  tags: pip
-
 - import_tasks: ssh.yaml
   tags: ssh
 
