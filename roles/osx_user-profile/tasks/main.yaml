@@ -6,9 +6,6 @@
 - import_tasks: gitmultirepo.yaml
   tags: gitmultirepo
 
-- import_tasks: homebrew.yaml
-  tags: homebrew
-
 - import_tasks: iterm2.yaml
   tags: iterm2
 
