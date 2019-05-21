@@ -18,5 +18,3 @@
 - import_tasks: utility-packages.yaml
   tags: utility-packages
 
-- import_tasks: ipython.yaml
-  tags: ipython
