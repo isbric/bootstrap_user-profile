@@ -12,3 +12,4 @@
     - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
+    - { role: docker, tags: ['osx', 'user-profile-desktop']}

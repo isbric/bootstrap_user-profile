@@ -1,0 +1,4 @@
+# Tasks to include
+
+- import_tasks: docker.yaml
+  tags: docker

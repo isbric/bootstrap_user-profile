@@ -1,0 +1,4 @@
+# Docker
+- name: "Ensure latest docker package with brew"
+  homebrew_cask: name=docker state=latest
+  tags: docker

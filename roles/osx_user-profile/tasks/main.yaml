@@ -26,6 +26,3 @@
 
 - import_tasks: ipython.yaml
   tags: ipython
-
-- import_tasks: docker.yaml
-  tags: docker
