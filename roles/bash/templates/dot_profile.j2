@@ -2,7 +2,7 @@
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 {% if bash.user_bash_completions_directory %}
 [ -d {{ bash.user_bash_completions_directory }} ] && for f in $(ls {{ bash.user_bash_completions_directory }}); do
-	[ -f "$f" ] && . "$f"
+	[ -f {{ bash.user_bash_completions_directory }}/${f} ] && . {{ bash.user_bash_completions_directory }}/${f}
 done
 {% endif %}
 
