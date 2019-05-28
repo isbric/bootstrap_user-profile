@@ -8,16 +8,20 @@
   roles:
     - { role: osx_user-profile, tags: ['osx', 'user-profile'],  when: ansible_distribution == "MacOSX" }
     - { role: osx_user-profile-extended, tags: ['osx', 'user-profile-extended'],  when: ansible_distribution == "MacOSX" }
+
     - { role: bash, tags: ['bash'],  when: ansible_distribution == "MacOSX" }
+    - { role: iterm2, tags: ['iterm2'],  when: ansible_distribution == "MacOSX" }
     - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
+    - { role: git, tags: ['git']}
+    - { role: ipython, tags: ['ipython']}
+    - { role: gitmultirepo, tags: ['gitmultirepo']}
+
+    - { role: vault, tags: ['vault']}
+    - { role: ansible, tags: ['ansible']}
     - { role: pip, tags: ['osx', 'user-profile-headless']}
     - { role: homebrew, tags: ['osx', 'user-profile-headless'], when: ansible_distribution == "MacOSX"}
-    - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
-    - { role: chrome, tags: ['osx', 'user-profile-desktop']}
-    - { role: docker, tags: ['osx', 'user-profile-desktop']}
 
-    - { role: ansible, tags: ['ansible']}
-    - { role: git, tags: ['git']}
-    - { role: gitmultirepo, tags: ['gitmultirepo']}
-    - { role: ipython, tags: ['ipython']}
-    - { role: vault, tags: ['vault']}
+    - { role: chrome, tags: ['osx', 'user-profile-desktop']}
+
+    - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
+    - { role: docker, tags: ['osx', 'user-profile-desktop']}
