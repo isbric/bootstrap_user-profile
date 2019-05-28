@@ -1,8 +1,4 @@
 # Tasks to include
-- import_tasks: vagrant.yaml
-  tags:
-    - vagrant
-
 - import_tasks: kubernetes-cli.yaml
   tags:
     - kubernetes_cli

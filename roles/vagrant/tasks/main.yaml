@@ -1,0 +1,4 @@
+# Vagrant
+- import_tasks: vagrant.yaml
+  tags: vagrant
+
