@@ -1,0 +1,4 @@
+# vault
+- name: "Ensure latest vault package with brew"
+  homebrew: name=vault state=latest
+  tags: vault
