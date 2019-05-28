@@ -23,5 +23,6 @@
 
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
 
+    - { role: virtualbox, tags: ['virtualbox']}
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: docker, tags: ['osx', 'user-profile-desktop']}
