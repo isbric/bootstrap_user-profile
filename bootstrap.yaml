@@ -15,3 +15,9 @@
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
     - { role: docker, tags: ['osx', 'user-profile-desktop']}
+
+    - { role: ansible, tags: ['ansible']}
+    - { role: git, tags: ['git']}
+    - { role: gitmultirepo, tags: ['gitmultirepo']}
+    - { role: ipython, tags: ['ipython']}
+    - { role: vault, tags: ['vault']}

@@ -1,0 +1,6 @@
+# Tasks to include
+- import_tasks: vault.yaml
+  tags: bash
+
+#- import_tasks: completions.yaml
+#  tags: completions
