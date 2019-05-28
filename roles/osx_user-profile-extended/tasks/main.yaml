@@ -3,6 +3,3 @@
   tags:
     - kubernetes_cli
 
-- import_tasks: minikube.yaml
-  tags:
-    - minikube

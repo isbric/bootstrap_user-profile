@@ -24,5 +24,7 @@
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
 
     - { role: virtualbox, tags: ['virtualbox']}
+    - { role: vagrant, tags: ['vagrant']}
+    - { role: minikube, tags: ['minikube']}
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: docker, tags: ['osx', 'user-profile-desktop']}
