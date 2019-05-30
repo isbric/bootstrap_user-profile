@@ -1,0 +1,4 @@
+# Vagrant
+- name: "Ensure latest vagrant with brew"
+  homebrew: name=terraform state=present
+

@@ -26,6 +26,7 @@
     - { role: vagrant, tags: ['vagrant']}
     - { role: minikube, tags: ['minikube']}
 
-    - { role: kubernetes-cli, tags: ['kubernetes-cli']}
+    - { role: terraform, tags: ['terraform']}
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
+    - { role: kubernetes-cli, tags: ['kubernetes-cli']}
     - { role: docker, tags: ['osx', 'user-profile-desktop']}
