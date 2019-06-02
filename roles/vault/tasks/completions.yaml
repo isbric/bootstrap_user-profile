@@ -1,0 +1,7 @@
+# vault bash completion
+
+- name: "Ensure {{ bash.user_bash_completions_directory }}/vault latest"
+  template:
+    src: vault_completions.j2
+    dest: "{{ bash.user_bash_completions_directory }}/vault"
+  when: bash.user_bash_completions_directory is defined

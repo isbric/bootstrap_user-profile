@@ -2,5 +2,5 @@
 - import_tasks: vault.yaml
   tags: vault
 
-#- import_tasks: completions.yaml
-#  tags: completions
+- import_tasks: completions.yaml
+  tags: completions
