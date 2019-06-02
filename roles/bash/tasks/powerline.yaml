@@ -19,11 +19,8 @@
     dest: "{{ powerline_config_directory.path }}/powerline-fonts/"
   register: powerline_fonts_repo
 
-- debug: var=powerline_fonts_repo
-
 - name: "Ensure latest powerline-status Hack font in ~/Library/Fonts/"
   copy:
     src: "{{ powerline_config_directory.path }}/powerline-fonts/Hack"
     dest: ~/Library/Fonts/Hack
 
-- debug: var=powerline_config_directory.path
