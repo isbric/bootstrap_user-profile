@@ -1,0 +1,5 @@
+# Tasks to include
+
+- import_tasks: tmux.yaml
+  tags: tmux
+

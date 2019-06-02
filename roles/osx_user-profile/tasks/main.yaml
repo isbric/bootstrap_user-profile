@@ -6,9 +6,6 @@
 - import_tasks: ssh.yaml
   tags: ssh
 
-- import_tasks: tmux.yaml
-  tags: tmux
-
 - import_tasks: utility-packages.yaml
   tags: utility-packages
 

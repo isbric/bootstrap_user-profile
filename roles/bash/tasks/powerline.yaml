@@ -1,19 +1,29 @@
 # powerline-status
-- name: "Ensure latest powerline-status with pip3"
+- name: "Ensure latest powerline-status package"
   pip: name=powerline-status state=latest executable=pip3
+  register: powerline_package
 
 - name: "Ensure ~/.config/powerline/ directory present"
   file: path=~/.config/powerline state=directory
+  register: powerline_config_directory
 
 - name: "Ensure latest ~/.config/powerline/config.json"
-  template: src=dot_config_powerline_config.json.j2 dest=~/.config/powerline/config.json
+  template:
+    src: dot_config_powerline_config.json.j2
+    dest: ~/.config/powerline/config.json
   register: powerline_config
 
-- name: "Ensure latest powerline-fonts with repo"
+- name: "Ensure latest powerline-fonts"
   git:
     repo: https://github.com/powerline/fonts.git
-    dest: ~/repos/powerline-fonts.git
-  register: powerline_fonts_updated
+    dest: "{{ powerline_config_directory.path }}/powerline-fonts/"
+  register: powerline_fonts_repo
+
+- debug: var=powerline_fonts_repo
 
 - name: "Ensure latest powerline-status Hack font in ~/Library/Fonts/"
-  copy: src=~/repos/powerline-fonts.git/Hack dest=~/Library/Fonts/Hack
+  copy:
+    src: "{{ powerline_config_directory.path }}/powerline-fonts/Hack"
+    dest: ~/Library/Fonts/Hack
+
+- debug: var=powerline_config_directory.path
