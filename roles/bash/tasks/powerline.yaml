@@ -3,6 +3,12 @@
   pip: name=powerline-status state=latest executable=pip3
   register: powerline_package
 
+- name: "Register powerline location"
+  shell: "[ -d $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline ] && echo $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline"
+  register: powerline_package_location
+  check_mode: no
+  changed_when: false
+
 - name: "Ensure ~/.config/powerline/ directory present"
   file: path=~/.config/powerline state=directory
   register: powerline_config_directory

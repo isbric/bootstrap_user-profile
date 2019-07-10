@@ -2,10 +2,6 @@
 - name: "Ensure latest tmux package"
   homebrew: name=tmux state=latest
 
-- name: "Register powerline location"
-  shell: "[ -d $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline ] && echo $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline"
-  register: powerline_package_location
-
 - name: "Ensure ~/.tmux.conf latest"
   template: src=dot_tmux.j2 dest=~/.tmux.conf
   when: powerline_package_location is defined
