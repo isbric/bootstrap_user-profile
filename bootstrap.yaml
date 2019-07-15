@@ -13,6 +13,7 @@
     - { role: tmux, tags: ['tmux']}
     - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
     - { role: git, tags: ['git']}
+    - { role: python3, tags: ['python3']}
     - { role: ipython, tags: ['ipython']}
     - { role: gitmultirepo, tags: ['gitmultirepo']}
 

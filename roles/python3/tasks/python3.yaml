@@ -1,0 +1,10 @@
+# python3
+
+- name: "Ensure python3 is default"
+  file:
+    src: /usr/local/bin/python3
+    dest: /usr/local/bin/python
+    state: link
+
+- name: "Ensure latest python3 package"
+  homebrew: name=python state=latest

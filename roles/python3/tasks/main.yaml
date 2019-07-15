@@ -1,0 +1,4 @@
+# Tasks to include
+
+- import_tasks: python3.yaml
+  tags: python3
