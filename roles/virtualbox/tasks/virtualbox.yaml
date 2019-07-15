@@ -1,14 +1,13 @@
 # Virtualbox
-- name: "Ensure homebrew cask virtualbox absent, --extra-vars reinstall_brew_casks=yes"
-  homebrew_cask: name=virtualbox state=absent
-  when: reinstall_brew_casks | default('no') | bool
-
-- name: "Refresh sudo"
-  shell: "true"
-  become: yes
-  changed_when: False
+#- name: "Ensure homebrew cask virtualbox absent, --extra-vars reinstall_brew_casks=yes"
+#  homebrew_cask: name=virtualbox state=absent
+#  when: reinstall_brew_casks | default('no') | bool
+#
+#- name: "Refresh sudo"
+#  shell: "true"
+#  become: yes
+#  changed_when: False
 
 - name: "Ensure homebrew cask virtualbox present"
   homebrew_cask: name=virtualbox state=latest
-  become: yes
 
