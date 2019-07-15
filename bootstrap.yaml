@@ -1,5 +1,5 @@
 ---
-# Thsi playbook applys roles to localhost
+# This playbook applys roles to localhost
 
 - name: "Apply roles to localhost"
   hosts: localhost
