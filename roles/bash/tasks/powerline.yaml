@@ -2,6 +2,7 @@
 - name: "Ensure latest powerline-status package"
   pip: name=powerline-status state=latest executable=pip3
   register: powerline_package
+  notify: powerline reload
 
 - name: "Register powerline location"
   shell: "[ -d $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline ] && echo $(pip show powerline-status | grep 'Location' | awk '{print $2}')/powerline"

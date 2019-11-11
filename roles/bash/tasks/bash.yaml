@@ -3,6 +3,6 @@
   template:
     src: dot_profile.j2
     dest: ~/.profile
-  register: refresh profile
+  notify: profile reload
 
 

@@ -1,0 +1,3 @@
+- name: iterm2 reload
+  shell: echo "iTerm2 settings updated by ansible, restart iTerm2." | write {{ ansible_user }}
+  tags: handler

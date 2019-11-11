@@ -8,18 +8,17 @@
   roles:
     - { role: osx_user-profile, tags: ['osx', 'user-profile'],  when: ansible_distribution == "MacOSX" }
 
-    - { role: bash, tags: ['bash'],  when: ansible_distribution == "MacOSX" }
     - { role: iterm2, tags: ['iterm2'],  when: ansible_distribution == "MacOSX" }
     - { role: tmux, tags: ['tmux']}
     - { role: vim, tags: ['vim'],  when: ansible_distribution == "MacOSX" }
     - { role: git, tags: ['git']}
     - { role: python3, tags: ['python3']}
+    - { role: pip, tags: ['osx', 'user-profile-headless']}
+    - { role: bash, tags: ['bash'],  when: ansible_distribution == "MacOSX" }
     - { role: ipython, tags: ['ipython']}
     - { role: gitmultirepo, tags: ['gitmultirepo']}
 
-    - { role: vault, tags: ['vault']}
     - { role: ansible, tags: ['ansible']}
-    - { role: pip, tags: ['osx', 'user-profile-headless']}
     - { role: homebrew, tags: ['osx', 'user-profile-headless'], when: ansible_distribution == "MacOSX"}
 
     - { role: chrome, tags: ['osx', 'user-profile-desktop']}
@@ -28,6 +27,7 @@
     - { role: vagrant, tags: ['vagrant']}
     - { role: minikube, tags: ['minikube']}
 
+    - { role: vault, tags: ['vault']}
     - { role: terraform, tags: ['terraform']}
     - { role: openstackclient, tags: ['osx', 'openstackclient'],  when: ansible_distribution == "MacOSX" }
     - { role: kubernetes-cli, tags: ['kubernetes-cli']}

@@ -1,0 +1,7 @@
+- name: profile reload
+  shell: echo ".profile updated by ansible, run \"source ~/.profile\"". | write {{ ansible_user }}
+  tags: handler
+
+- name: powerline reload
+  command: powerline-config --reload
+  when: powerline_config.changed

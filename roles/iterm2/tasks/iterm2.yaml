@@ -5,6 +5,7 @@
 
 - name: "Ensure homebrew cask iTerm2 present"
   homebrew_cask: name=iterm2 state=present
+  notify: iterm2 reload
 
 - name: "Ensure ~/.iterm2/ directory present"
   file: path=~/.iterm2 state=directory
@@ -13,4 +14,4 @@
   template:
     src: com.googlecode.iterm2.plist.j2
     dest: ~/.iterm2/default_com.googlecode.iterm2.plist
-  register: refresh_iterm2
+  notify: iterm2 reload
