@@ -1,6 +1,10 @@
 # Ansible
 - name: "Ensure latest ansible with pip"
-  pip: name=ansible state=latest
+  pip:
+    name:
+      - ansible
+      - passlib
+    state: latest
 
 - name: "Ensure skel ~/.ansible/"
   file:
