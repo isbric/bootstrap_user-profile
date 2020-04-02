@@ -38,6 +38,8 @@ alias gl='git ll'
 alias einar='echo "einar says: $(dd if=/dev/random bs=1 count=5)!"'
 alias ipython="python -m IPython"
 
+function title() { echo -ne "\033]0;$*\007"; }
+
 # CLI googling
 function chrome() { for arg in "$@"; do open -a "Google Chrome" ${arg}; done }
 function google() { for arg in "$@"; do open -a "Google Chrome" "https://google.com/search?q=${arg}"; done }
